@@ -12,7 +12,21 @@ import {
 } from "@chakra-ui/react";
 import { RiInformationLine } from "react-icons/ri";
 
-export function Informations() {
+interface InformationsProps {
+  countryNumber: number;
+  languageNumber: number;
+  cityNumber: number;
+  cities: Array<string>;
+}
+
+export function Informations({
+  countryNumber,
+  languageNumber,
+  cityNumber,
+  cities,
+}: InformationsProps) {
+  const Cities = cities;
+
   return (
     <Flex align="center" justify="space-between">
       <Flex
@@ -21,7 +35,7 @@ export function Informations() {
         align={["flex-start", "flex-start", "center"]}
       >
         <Heading fontSize={["2xl", "5xl"]} color="yellow.400" fontWeight="500">
-          50
+          {countryNumber}
         </Heading>
         <Text fontWeight="600" fontSize={["md", "xl"]} color="gray.700">
           países
@@ -33,7 +47,7 @@ export function Informations() {
         align={["flex-start", "flex-start", "center"]}
       >
         <Heading fontSize={["2xl", "5xl"]} color="yellow.400" fontWeight="500">
-          60
+          {languageNumber}
         </Heading>
         <Text fontWeight="600" fontSize={["md", "xl"]} color="gray.700">
           línguas
@@ -45,7 +59,7 @@ export function Informations() {
         align={["flex-start", "flex-start", "center"]}
       >
         <Heading fontSize={["2xl", "5xl"]} color="yellow.400" fontWeight="500">
-          27
+          {cityNumber}
         </Heading>
         <Text fontWeight="600" fontSize={["md", "xl"]} color="gray.700">
           cidades +100
@@ -66,8 +80,7 @@ export function Informations() {
               <PopoverArrow bg="gray.700" />
               <PopoverCloseButton m="auto" />
               <PopoverBody fontSize="lg" fontWeight="400" mt="2">
-                Hamburgo , Munique, Frankfurt , Turim, Florença, Veneza,
-                Paris,Barcelona ...
+                {Cities.map((city) => ` ${city}; `)}
               </PopoverBody>
             </PopoverContent>
           </Popover>

@@ -41,7 +41,7 @@ export function Header() {
         )}
         <Image
           w={["81px", "184px"]}
-          src="/logo.svg"
+          src="/countries/logo.svg"
           alt="Um avição voando sobre a logomarca"
           justifySelf="center"
           gridColumn="2"
