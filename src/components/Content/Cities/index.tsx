@@ -68,7 +68,7 @@ export function Cities() {
             />
             <City
               city="Karachi"
-              cityImage="/countries/karachi.jpg"
+              cityImage="/countries/Karachi.jpg"
               flag="/flags/pakistanFlag.png"
               country="Paquistão"
             />
